@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :pro_con do
-    decision 
+    #decision 
     description "MyString"
     weight 1
     category "pro"
