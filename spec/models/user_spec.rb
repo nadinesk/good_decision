@@ -14,7 +14,21 @@ RSpec.describe User, type: :model do
   	end
 
 
-  	it 'requires than an email is unique'
+  	it 'requires than an email is unique' do 
+  		create(:user)
+  		user = build(:user)
+
+  		expect(user.valid?).to equal(false)
+  		expect(user.errors.full_messages).to eq([
+  			"Email has already been taken"
+  			
+  			])
+  	end
+
+
+  	it 'requires that an email is valid (example: contains an @ symbol and a .com, .org, etc)'
+
+
 
   end
 
