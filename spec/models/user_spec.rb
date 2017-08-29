@@ -73,7 +73,7 @@ RSpec.describe User, type: :model do
   		user = create(:user)
   		user.decisions.create
 
-  		expect(user.decision.id).not_to eq(nil)
+  		expect(user.decisions.first.id).not_to eq(nil)
 
 
   	end

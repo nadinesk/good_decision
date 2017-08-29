@@ -1,5 +1,7 @@
 class User < ApplicationRecord
 
+	has_many :decisions
+
 	has_secure_password
 
 	validates :email, presence: true

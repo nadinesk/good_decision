@@ -17,7 +17,14 @@ RSpec.describe Decision, type: :model do
 
   describe 'relationships' do 
 
-  	pending 'belongs to a user' 
+  	it 'belongs to a user' do 
+  		decision = create(:decision) 
+
+  		expect(decision.user).not_to eq(nil)
+  		expect(decision.user.id).not_to eq(nil)
+
+  	end
+
   end
   
 
