@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829042408) do
+ActiveRecord::Schema.define(version: 20170829050847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,15 @@ ActiveRecord::Schema.define(version: 20170829042408) do
     t.index ["user_id"], name: "index_decisions_on_user_id"
   end
 
+  create_table "pro_cons", force: :cascade do |t|
+    t.bigint "decision_id"
+    t.string "description"
+    t.integer "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["decision_id"], name: "index_pro_cons_on_decision_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -32,4 +41,5 @@ ActiveRecord::Schema.define(version: 20170829042408) do
   end
 
   add_foreign_key "decisions", "users"
+  add_foreign_key "pro_cons", "decisions"
 end

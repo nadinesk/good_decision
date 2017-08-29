@@ -25,6 +25,21 @@ RSpec.describe Decision, type: :model do
 
   	end
 
+  	it 'has many pro_cons' do
+  		decision = create(:decision)
+
+  		decision.pro_cons.create
+
+  		expect(decision.pro_cons.first.id).not_to eq(nil)
+  		
+  	end
+
+  	
+
+  end
+
+  describe 'instance methods' do 
+
   end
   
 
