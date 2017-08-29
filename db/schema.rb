@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829050847) do
+ActiveRecord::Schema.define(version: 20170829051943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170829050847) do
     t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category", default: "pro"
     t.index ["decision_id"], name: "index_pro_cons_on_decision_id"
   end
 

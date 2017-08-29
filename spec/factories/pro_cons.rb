@@ -3,5 +3,6 @@ FactoryGirl.define do
     decision 
     description "MyString"
     weight 1
+    category "pro"
   end
 end
