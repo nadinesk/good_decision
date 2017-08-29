@@ -68,7 +68,16 @@ RSpec.describe User, type: :model do
 
   describe 'relationships' do 
 
-  	it 'has many decisions'
+  	it 'has many decisions' do 
+
+  		user = create(:user)
+  		user.decisions.create
+
+  		expect(user.decision.id).not_to eq(nil)
+
+
+  	end
+
 
   end
 
