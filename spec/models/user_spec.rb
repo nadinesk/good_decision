@@ -4,13 +4,14 @@ RSpec.describe User, type: :model do
   describe 'validations' do 
 
   	it 'requires an username, email, and password upon creation' do 
-  		user = build(:user, email: nil, password: nil)
+  		user = build(:user, email: nil, password: nil, username: nil)
 
   		expect(user.valid?).to equal(false)
   		expect(user.errors.full_messages).to eq([
-  			"Password can't be blank", 
+  			"Password can't be blank",   			
   			"Email can't be blank", 
-  			"Email is invalid"
+  			"Email is invalid", 
+  			"Username can't be blank",
   			])
   	end
 
@@ -55,7 +56,12 @@ RSpec.describe User, type: :model do
 
   describe 'on save' do 
 
-  	it 'hashes a password'
+  	it 'hashes a password' do 
+  		user = build(:user) 
+  		user.save
+
+  		expect(user.password_digest).not_to equal(user.password)
+  	end
 
   end
 
