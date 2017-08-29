@@ -9,6 +9,12 @@ RSpec.describe User, type: :model do
 
   end
 
+  describe 'on save' do 
+
+  	it 'hashes a password'
+
+  end
+
 
   describe 'relationships' do 
 
