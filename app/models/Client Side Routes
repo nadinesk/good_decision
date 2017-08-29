@@ -1,0 +1,31 @@
+Client Side Routes
+
+/
+/signup
+/login
+/users/:slug
+/users/:slug/decision
+/decisions
+/decisions/:slug
+/users/:slug/
+/users/:slug/decision/:slug
+/users/decisions_made
+
+Server Side Routes
+
+POST /api/v1/users <- create a user account; it returns the newly created user and a JWT token
+{
+	user: {
+		id: 1,
+		username: 'nadine',
+		email: nadine@blah.com, 		
+	}
+	token: '12341234dasdfasfq43455245235'
+
+}
+
+POST /api/v1/auth <- logs in a previously created user; it returns the user info and a JWT token
+
+
+
+

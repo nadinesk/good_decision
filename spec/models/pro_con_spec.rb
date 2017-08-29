@@ -11,15 +11,12 @@ RSpec.describe ProCon, type: :model do
   	end
 
   	it 'must have a category of either "pro" or "con"' do 
-  		decision = create(:decision)
-  		pro_con = build(:pro_con, category: "blah", weight: 1 )
+  	pro_con = build(:pro_con, category: "blah", weight: 1 )
 
-  		decision.pro_cons << pro_con
-
-  		expect(pro_con.valid?).to equal(false)
-  		expect(pro_con.errors.full_messages).to eq([
-  			"Category is not included in the list"
-  			])
+      expect(pro_con.valid?).to equal(false)
+      expect(pro_con.errors.full_messages).to eq([
+        "Category is not included in the list"
+        ])
 
   	end
   end
@@ -27,13 +24,10 @@ RSpec.describe ProCon, type: :model do
   describe 'relationships' do 
 
   	it 'belongs to a decision' do 
-  		decision = create(:decision)
-  		pro_con = build(:pro_con) 
+  		  pro_con = create(:pro_con) 
+        expect(pro_con.decision).not_to eq(nil)
+        expect(pro_con.decision.id).not_to eq(nil)
 
-  		decision.pro_cons << pro_con
-		
-  		expect(pro_con.decision).not_to eq(nil)
-  		expect(pro_con.decision.id).not_to eq(nil)
 
   	end
 

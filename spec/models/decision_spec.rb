@@ -45,17 +45,18 @@ RSpec.describe Decision, type: :model do
   	 it "calculates the total of the pros and con weights by subtracting the total of the cons' weights from the total of the pros' weights" do 
         
         decision = create(:decision)
-        pro_con1 = build(:pro_con, category: 'pro', weight: 5)
-        pro_con2 = build(:pro_con, category: 'pro', weight: 4)
-        pro_con3 = build(:pro_con, category: 'con', weight: 3)
-        pro_con4 = build(:pro_con, category: 'con', weight: 2)
-		decision.pro_cons << pro_con1     
-		decision.pro_cons << pro_con2    
-		decision.pro_cons << pro_con3    
+        pro_con1 = build(:pro_con, category: 'pro', weight: 5, decision: decision)
+        pro_con2 = build(:pro_con, category: 'pro', weight: 4, decision: decision)
+        pro_con3 = build(:pro_con, category: 'con', weight: 3, decision: decision)
+        pro_con4 = build(:pro_con, category: 'con', weight: 2, decision: decision)
+    		
+        decision.pro_cons << pro_con1     
+		    decision.pro_cons << pro_con2    
+		    decision.pro_cons << pro_con3    
 
         expect(decision.total).to eq(6)
 		
-		decision.pro_cons << pro_con4   
+		    decision.pro_cons << pro_con4   
         
         expect(decision.total).to eq(4)
       end
