@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :decision do
-    user nil
-    title "MyString"
+    user 
+    title "Decision1"
   end
 end
