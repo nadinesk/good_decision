@@ -5,6 +5,3 @@ FactoryGirl.define do
     username "nadine"
   end
 end
-
-user = create(:user)
-user = build(:user)
