@@ -38,9 +38,6 @@ RSpec.describe Decision, type: :model do
 
   end
 
-  describe 'instance methods' do 
-
-  end
   
 
 
