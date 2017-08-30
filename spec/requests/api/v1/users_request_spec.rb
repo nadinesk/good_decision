@@ -30,6 +30,7 @@ RSpec.describe "Api::V1::Users", type: :request do
         body = JSON.parse(@response.body)
 
         expect(@response.status).to eq(200)
+        binding.pry
         expect(body['user']['id']).not_to eq(nil)
         expect(body['user']['email']).to eq('nadine@blah.com')
         expect(body['user']['username']).to eq('nadine')
