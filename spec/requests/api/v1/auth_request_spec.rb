@@ -30,8 +30,7 @@ RSpec.describe "Api::V1::Users", type: :request do
       end
 
       it "returns the existing user (from params) and a JWT token" do  
-        body = JSON.parse(@response.body)
-        binding.pry
+        body = JSON.parse(@response.body)        
         expect(@response.status).to eq(200)
         expect(body['user']['id']).not_to eq(nil)
         expect(body['user']['email']).to eq('nadine@blah.com')
