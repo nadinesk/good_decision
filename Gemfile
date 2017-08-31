@@ -22,6 +22,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jwt', '~> 1.5.6'
 
+ruby '2.3.1'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
