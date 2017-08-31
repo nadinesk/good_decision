@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       post '/auth/refresh', to: "auth#refresh"
 
       # /api/v1/carts 
-      resources :carts, only: [:show, :update]
+      
     end
   end
 end
