@@ -24,4 +24,11 @@ class Api::V1::AuthController < ApplicationController
     render 'users/user_with_token.json.jbuilder', user: @user
   end
 
+    def ping
+    render json: {
+      status: "OK"
+    }
+  end
+
+
 end

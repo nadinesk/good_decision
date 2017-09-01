@@ -1,21 +1,16 @@
 class Api::V1::UsersController < ApplicationController 
 
-  def index
-  	render json: {
-        message: "hi"
-      }
-      
-  end
-  def create  
+  
+   def create
     @user = User.new(user_params)
-    if @user.save  
+    if @user.save
       render 'users/user_with_token.json.jbuilder', user: @user
+
     else
       render json: {
-        errors: @user.errors
+        errors: @user.errors.full_messages
       }, status: 500
     end
-    
   end
 
   private 
