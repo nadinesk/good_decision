@@ -24,3 +24,8 @@ module GoodDecision
     config.api_only = true
   end
 end
+
+config.action_dispatch.default_headers = {
+    'Access-Control-Allow-Origin' => 'https://good-decision.herokuapp.com',
+    'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
+  }
