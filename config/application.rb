@@ -23,10 +23,7 @@ module GoodDecision
     config.autoload_paths << Rails.root.join('lib')
     config.api_only = true
 
-    config.action_dispatch.default_headers = {
-    'Access-Control-Allow-Origin' => 'https://good-decision.herokuapp.com',
-    'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(",")
-  	}
+    
   end
 end
 
