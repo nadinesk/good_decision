@@ -7,7 +7,9 @@ class Api::V1::UsersController < ApplicationController
 
     else
       render json: {
+        console.log(@user.errors.full_messages); 
         errors: @user.errors.full_messages
+
       }, status: 500
     end
    end
