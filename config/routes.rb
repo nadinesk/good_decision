@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do  
 
       root "auth#ping"
-      resources :users, only: [:create]
+      resources :users, only: [:create, :show] 
 
       # /api/v1/auth
       post '/auth', to: "auth#login"
