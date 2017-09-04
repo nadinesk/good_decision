@@ -1,7 +1,7 @@
 class Api::V1::DecisionsController < ApplicationController 
   
-    
-
+   before_action :authenticate_token!, only: [:create, :update, :destroy]
+   
    def index
        @decisions = User.find_by(id: params[:user_id])&.decisions
     	render 'decisions/decisions.json.jbuilder', decisions: @decisions
