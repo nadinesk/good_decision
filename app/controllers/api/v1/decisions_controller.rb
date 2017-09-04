@@ -81,7 +81,7 @@ class Api::V1::UsersController < ApplicationController
   private 
 
     def decision_params 
-      params.require(:user).permit(:title)
+      params.require(:decision).permit(:title)
     end
     
 end
