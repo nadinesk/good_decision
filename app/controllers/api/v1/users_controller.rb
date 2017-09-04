@@ -1,5 +1,11 @@
 class Api::V1::UsersController < ApplicationController 
   
+   def index
+      render json: {
+        meesage: "users index"
+      }
+   end
+
    def create
     @user = User.new(user_params)
     if @user.save
@@ -30,5 +36,5 @@ class Api::V1::UsersController < ApplicationController
     def user_params 
       params.require(:user).permit(:email, :username, :password)
     end
-    
+
 end
