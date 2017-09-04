@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
       root "auth#ping"
       resources :users, only: [:create, :show] 
+      resources :decisions
 
       # /api/v1/auth
       post '/auth', to: "auth#login"
