@@ -1,9 +1,10 @@
 class Api::V1::UsersController < ApplicationController 
   
    def index
-      render json: {
+       render json: {
         meesage: "users index"
       }
+
    end
 
    def create
